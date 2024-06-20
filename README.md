@@ -34,8 +34,7 @@ Navigate to http://localhost:4200/. The application will automatically reload if
 ## Project Structure
 - src/: The main source directory.
   - app/: The main application module and components.
-  - assets/: Static assets such as images and styles.
-  - environments/: Configuration files for different environments.
+    - app.component.scss: All applied css is here
 
 ## Further help
 
