@@ -32,10 +32,10 @@ ng serve
 Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
 
 ## Project Structure
-src/: The main source directory.
-app/: The main application module and components.
-assets/: Static assets such as images and styles.
-environments/: Configuration files for different environments.
+- src/: The main source directory.
+  - app/: The main application module and components.
+  - assets/: Static assets such as images and styles.
+  - environments/: Configuration files for different environments.
 
 ## Further help
 
