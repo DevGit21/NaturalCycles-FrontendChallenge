@@ -1,6 +1,17 @@
-
 <main class="main">
-  <h1>Hello! 👋</h1>
+  <div class="event-name">
+    Time to {{eventName}}
+  </div>
+  <div class="countdown-text">{{ countdownText }}</div>
+  <div class="row">
+    <div class="form-field">
+      <label for="eventName" class="floating-label">Title</label>
+      <input id="eventName" type="text" [(ngModel)]="eventName" placeholder=" ">
+    </div>
+    <div class="form-field">
+      <label for="endDate" class="floating-label">Date</label>
+      <input id="endDate" type="datetime-local" [(ngModel)]="endDate" (change)="startCountdown()" placeholder=" ">
+    </div>
+  </div> 
 </main>
-
-<router-outlet />
+<router-outlet></router-outlet>
