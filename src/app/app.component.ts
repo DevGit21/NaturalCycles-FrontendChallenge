@@ -10,13 +10,18 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  eventName = 'Midsummer Eve';
-  endDate: string | null = "2024-06-22T00:00:00"; 
+  eventName: string;
+  endDate: string | null;
   countdownText = '';
   private intervalId: any;
 
   constructor() {
-     this.startCountdown();
+    this.eventName = localStorage.getItem('eventName') || 'Midsummer Eve';
+    this.endDate = localStorage.getItem('endDate') || "2024-06-22T00:00:00";
+  }
+  
+  ngOnInit() {
+    this.startCountdown();
   }
 
   startCountdown() {
@@ -50,5 +55,17 @@ export class AppComponent {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     this.countdownText = `${days} days, ${hours} h, ${minutes} m, ${seconds} s`;
+  }
+
+  onEventNameChange(newName: string) {
+    this.eventName = newName;
+    localStorage.setItem('eventName', newName);
+  }
+
+  onEndDateChange(event: Event) {
+    const newDate = (event.target as HTMLInputElement).value;
+    this.endDate = newDate;
+    localStorage.setItem('endDate', newDate);
+    this.startCountdown();
   }
 }
